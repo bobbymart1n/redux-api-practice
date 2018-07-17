@@ -1,19 +1,24 @@
 import React from 'react';
-
-class Picture extends React.Component {
-  handleFormSubmit(e) {
+import { connect } from 'react-redux';
+const Picture = (props) => {
+  let _imageUrl = null;
+  const handleFormSubmit = (e) => {
+    const { dispatch } = props
     e.preventDefault();
+    console.log(_imageUrl.value);
+    _imageUrl.value = '';
   }
-  render() {
-    return(
-      <div>
-        <form onSubmit={this.handleFormSubmit()}>
-          <input
-            type='text' />
-        </form>
-      </div>
-    )
-  }
+  return(
+    <div>
+      <form onSubmit={handleFormSubmit}>
+        <input
+          type='file'
+          placeholder='Enter a URL'
+          ref={(input) => {_imageUrl = input;}}/>
+        <button type='submit'>Submit</button>
+      </form>
+    </div>
+  )
 }
 
-export default Picture;
+export default connect()(Picture);

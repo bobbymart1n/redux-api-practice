@@ -1,3 +1,8 @@
+import { c } from './../constants';
+
 export default (state = {}, action) => {
-  return state;
+  case c.UPLOAD_FILE:
+    return action.imageUrl
+  default:
+    return state;
 };
