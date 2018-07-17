@@ -1,5 +1,5 @@
-# React Tic Tac Toe
-**A React application for Epicodus 07.17.18**
+# React Redux API Practice
+**A React/Redux application for Epicodus 07.17.18**
 
 ## By Bobby Martin
 
@@ -20,4 +20,4 @@ A React Redux app that makes API calls
 
 This project uses the _MIT License_  
 
-&copy; **Bobby Martin & Garnett Puett** 2018
+&copy; **Bobby Martin** 2018
