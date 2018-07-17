@@ -6,7 +6,6 @@ const reducer = (state = {}, action) => {
   let newBeerByStateSlice;
   switch (action.type) {
   case types.GET_BEER:
-    console.log(action.payload);
     newBeer = {
       data: action.payload,
       id: action.id

@@ -4,22 +4,26 @@ import { connect } from 'react-redux';
 import { fetchBeer } from './../actions';
 import PropTypes from 'prop-types';
 
-const Beer = (props) => {
-  const handleButtonClick = () => {
-    const { dispatch } = props;
+class Beer extends React.Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
     dispatch(fetchBeer());
   }
-  return(
-    <div>
-      <h1>Click to get a new Beer</h1>
-      <button onClick={handleButtonClick} type='submit'>Submit</button>
-      {Object.keys(props.ingredients).map((ingredientId) => {
-        let ingredient = props.ingredients[ingredientId];
-        <Ingredients
-          hops={ingredient.data.ingredients.hops}/>
-      })}
-    </div>
-  )
+  render() {
+    return(
+      <div>
+        <h1>Click to get a new Beer</h1>
+        {Object.keys(this.props.ingredients).map((ingredientId, index) => {
+          let ingredient = this.props.ingredients[ingredientId];
+          return <Ingredients
+                    hops={ingredient.data.ingredients.hops}
+                    malts={ingredient.data.ingredients.malt}
+                    yeast={ingredient.data.ingredients.yeast}
+                    key={index} />
+        })}
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => {
