@@ -1,10 +1,10 @@
 # React Tic Tac Toe
-**A React application for Epicodus 07.11.18**
+**A React application for Epicodus 07.17.18**
 
-## By Bobby Martin and Garnett Puett
+## By Bobby Martin
 
 ## Description
-A React Redux app where you can play tic tac toe
+A React Redux app that makes API calls
 
 ## Setup Requirements
 
