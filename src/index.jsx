@@ -8,8 +8,8 @@ import thunkMiddleware from 'redux-thunk';
 import reducer from './reducers/reducer.js';
 
 const store = createStore(reducer, applyMiddleware(thunkMiddleware));
-let unsubscrube = store.getState(() =>
-  console.log(store.getState)
+let unsubscrube = store.subscribe(() =>
+  console.log(store.getState())
 );
 
 const render = (Component) => {
